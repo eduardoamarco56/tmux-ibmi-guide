@@ -1,0 +1,26 @@
+# Archivos temporales
+*.tmp
+*.log
+*.swp
+*.swo
+*~
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de backup
+*.bak
+*.backup
+
+# Archivos de configuración local
+.env
+.env.local
+
+# Directorios de IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Archivos de Windows
+desktop.ini

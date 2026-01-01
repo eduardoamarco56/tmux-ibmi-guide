@@ -1,0 +1,208 @@
+# ============================================
+# Configuración de tmux para IBM i
+# ============================================
+# Archivo: ~/.tmux.conf
+# Uso: Copiar a tu directorio home en IBM i PASE
+# ============================================
+
+# --------------------------------------------
+# CONFIGURACIÓN GENERAL
+# --------------------------------------------
+
+# Cambiar prefijo de Ctrl+b a Ctrl+a (más cómodo)
+set -g prefix C-a
+unbind C-b
+bind C-a send-prefix
+
+# Habilitar soporte de mouse
+set -g mouse on
+
+# Mejorar colores para mejor visualización
+set -g default-terminal "screen-256color"
+
+# Aumentar límite de historial (útil para logs largos)
+set -g history-limit 50000
+
+# Reducir tiempo de escape (mejor respuesta)
+set -sg escape-time 0
+
+# Actualizar cada 5 segundos
+set -g status-interval 5
+
+# --------------------------------------------
+# NUMERACIÓN DE VENTANAS Y PANELES
+# --------------------------------------------
+
+# Comenzar numeración desde 1 (más intuitivo)
+set -g base-index 1
+setw -g pane-base-index 1
+
+# Renumerar ventanas automáticamente al cerrar una
+set -g renumber-windows on
+
+# --------------------------------------------
+# DIVISIÓN DE PANELES
+# --------------------------------------------
+
+# Dividir paneles con | y - (más intuitivo)
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+unbind '"'
+unbind %
+
+# Nueva ventana en el mismo directorio
+bind c new-window -c "#{pane_current_path}"
+
+# --------------------------------------------
+# NAVEGACIÓN ENTRE PANELES
+# --------------------------------------------
+
+# Navegación estilo vim (h,j,k,l)
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# Navegación con Alt+flechas (sin prefijo)
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+# --------------------------------------------
+# REDIMENSIONAR PANELES
+# --------------------------------------------
+
+# Redimensionar con Ctrl+flechas
+bind -r C-h resize-pane -L 5
+bind -r C-j resize-pane -D 5
+bind -r C-k resize-pane -U 5
+bind -r C-l resize-pane -R 5
+
+# Redimensionar con Alt+Shift+flechas
+bind -n M-S-Left resize-pane -L 2
+bind -n M-S-Right resize-pane -R 2
+bind -n M-S-Up resize-pane -U 2
+bind -n M-S-Down resize-pane -D 2
+
+# --------------------------------------------
+# MODO COPIA (SCROLL Y BÚSQUEDA)
+# --------------------------------------------
+
+# Usar modo vi para copiar
+setw -g mode-keys vi
+
+# Entrar en modo copia con v
+bind -T copy-mode-vi v send-keys -X begin-selection
+
+# Copiar con y (estilo vim)
+bind -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+
+# Pegar con P
+bind P paste-buffer
+
+# Búsqueda incremental
+bind / copy-mode \; send-keys "/"
+
+# --------------------------------------------
+# MONITOREO Y NOTIFICACIONES
+# --------------------------------------------
+
+# Mostrar actividad en otras ventanas
+setw -g monitor-activity on
+set -g visual-activity on
+
+# Notificar cuando un comando termina
+set -g visual-bell on
+set -g bell-action any
+
+# --------------------------------------------
+# BARRA DE ESTADO
+# --------------------------------------------
+
+# Posición de la barra de estado
+set -g status-position bottom
+
+# Colores de la barra de estado
+set -g status-style bg=colour234,fg=colour137
+
+# Lado izquierdo: Sesión
+set -g status-left '#[fg=colour233,bg=colour245,bold] #S #[fg=colour245,bg=colour234] '
+set -g status-left-length 20
+
+# Lado derecho: Host, fecha y hora
+set -g status-right '#[fg=colour233,bg=colour241,bold] %d/%m #[fg=colour233,bg=colour245,bold] %H:%M:%S '
+set -g status-right-length 50
+
+# Formato de ventanas
+setw -g window-status-current-style fg=colour81,bg=colour238,bold
+setw -g window-status-current-format ' #I#[fg=colour250]:#[fg=colour255]#W#[fg=colour50]#F '
+
+setw -g window-status-style fg=colour138,bg=colour235,none
+setw -g window-status-format ' #I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244]#F '
+
+# --------------------------------------------
+# ATAJOS PERSONALIZADOS
+# --------------------------------------------
+
+# Recargar configuración
+bind r source-file ~/.tmux.conf \; display "¡Configuración recargada!"
+
+# Limpiar historial y pantalla
+bind C-l send-keys 'C-l' \; clear-history
+
+# Sincronizar paneles (útil para ejecutar comandos en múltiples paneles)
+bind S set-window-option synchronize-panes \; display "Sincronización: #{?pane_synchronized,ON,OFF}"
+
+# Maximizar/restaurar panel
+bind m resize-pane -Z
+
+# Matar sesión actual
+bind X confirm-before -p "¿Matar sesión #S? (y/n)" kill-session
+
+# Matar ventana actual
+bind x confirm-before -p "¿Cerrar ventana #W? (y/n)" kill-window
+
+# --------------------------------------------
+# LAYOUTS PREDEFINIDOS
+# --------------------------------------------
+
+# Layout para monitoreo (3 paneles)
+bind M split-window -h -p 50 \; split-window -v -p 50
+
+# Layout para desarrollo (2 paneles verticales)
+bind D split-window -h -p 50
+
+# Layout para logs (3 paneles horizontales)
+bind L split-window -v -p 66 \; split-window -v -p 50
+
+# --------------------------------------------
+# CONFIGURACIÓN ESPECÍFICA PARA IBM i
+# --------------------------------------------
+
+# Aumentar tiempo de espera para comandos lentos
+set -g display-time 4000
+
+# Mantener sesiones activas
+set -g remain-on-exit off
+
+# Título de la ventana del terminal
+set -g set-titles on
+set -g set-titles-string '#H:#S.#I.#P #W #T'
+
+# --------------------------------------------
+# PLUGINS (OPCIONAL)
+# --------------------------------------------
+# Descomentar si usas TPM (Tmux Plugin Manager)
+
+# set -g @plugin 'tmux-plugins/tpm'
+# set -g @plugin 'tmux-plugins/tmux-sensible'
+# set -g @plugin 'tmux-plugins/tmux-resurrect'
+# set -g @plugin 'tmux-plugins/tmux-continuum'
+
+# Inicializar TPM (mantener al final del archivo)
+# run '~/.tmux/plugins/tpm/tpm'
+
+# ============================================
+# FIN DE CONFIGURACIÓN
+# ============================================
