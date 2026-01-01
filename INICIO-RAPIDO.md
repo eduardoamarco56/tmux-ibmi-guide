@@ -6,10 +6,9 @@
 
 ## 📍 Dónde Estás
 
-Estás dentro de una sesión de tmux en:
-- **Host:** 192.168.50.225
-- **Usuario:** EAMARCO
+Estás dentro de una sesión de tmux en tu IBM i:
 - **Entorno:** IBM i PASE
+- **Shell:** bash o ksh
 
 ---
 
