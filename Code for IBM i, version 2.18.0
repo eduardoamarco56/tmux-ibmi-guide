@@ -1,0 +1,371 @@
+Code for IBM i, version 2.18.0
+
+.: echo "This should be the only text!"
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "This should be the only text!",
+    "stderr": ""
+}
+
+.: echo $HOME && cd && test -w $HOME
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "/home/EAMARCO",
+    "stderr": ""
+}
+
+
+IBM i components:
+	git: /QOpenSys/pkgs/bin/git
+	grep: /QOpenSys/pkgs/bin/grep
+	pfgrep: undefined
+	tn5250: /QOpenSys/pkgs/bin/tn5250
+	setccsid: /usr/bin/setccsid
+	md5sum: /QOpenSys/pkgs/bin/md5sum
+	bash: /QOpenSys/pkgs/bin/bash
+	chsh: /QOpenSys/pkgs/bin/chsh
+	stat: /QOpenSys/pkgs/bin/stat
+	sort: /QOpenSys/pkgs/bin/sort
+	GETNEWLIBL.PGM: undefined
+	GETMBRINFO.SQL: undefined
+	QZDFMDB2.PGM: /QSYS.LIB/QZDFMDB2.PGM
+	startDebugService.sh: /QIBM/ProdData/IBMiDebugService/bin/startDebugService.sh
+	attr: /usr/bin/attr
+	iconv: /usr/bin/iconv
+	tar: /QOpenSys/pkgs/bin/tar
+	ls: /QOpenSys/pkgs/bin/ls
+	find: /QOpenSys/pkgs/bin/find
+	jdk80: /QOpenSys/QIBM/ProdData/JavaVM/jdk80/64bit
+	jdk11: /QOpenSys/QIBM/ProdData/JavaVM/jdk11/64bit
+	jdk17: undefined
+	openjdk11: /QOpensys/pkgs/lib/jvm/openjdk-11
+	uname: /usr/bin/uname
+
+/home/EAMARCO: /usr/bin/uname -rv
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "5 7",
+    "stderr": ""
+}
+
+/home/EAMARCO: echo "$HOME/.vscode/"
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "/home/EAMARCO/.vscode/",
+    "stderr": ""
+}
+
+/home/EAMARCO: echo "$HOME/.vscode/"
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "/home/EAMARCO/.vscode/",
+    "stderr": ""
+}
+
+/home/EAMARCO: echo "$HOME/.vscode/"
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "/home/EAMARCO/.vscode/",
+    "stderr": ""
+}
+
+/home/EAMARCO: echo "$HOME/.vscode/"
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "/home/EAMARCO/.vscode/",
+    "stderr": ""
+}
+
+/home/EAMARCO: echo "$HOME/.vscode/"
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "/home/EAMARCO/.vscode/",
+    "stderr": ""
+}
+
+/home/EAMARCO: echo "$HOME/.vscode/"
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "/home/EAMARCO/.vscode/",
+    "stderr": ""
+}
+
+
+Code for IBM i components:
+	cqsh (1): Installed
+	GetNewLibl (1): Error
+	GetMemberInfo (3): Error
+	CopyToImport (1): Installed
+	SQLStatementChecker (5): Installed
+	CLSyntaxChecker (1.1): Installed
+
+/home/EAMARCO: test -r /etc/vscode/settings.json
+{
+    "code": 1,
+    "signal": null,
+    "stdout": "",
+    "stderr": ""
+}
+
+settings config state: {"server":"no_exist"}
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1
+liblist
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "QSYS        SYS\nQSYS2       SYS\nQHLPSYS     SYS\nQUSRSYS     SYS\nQSHELL      PRD\nEAMARCO     CUR\nQGPL        USR\nQTEMP       USR",
+    "stderr": ""
+}
+
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1
+system "CRTLIB LIB(ILEDITOR) TEXT('Code for i temporary objects. May be cleared.')"
+/home/EAMARCO: [ -d "/tmp" ]
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "",
+    "stderr": ""
+}
+
+{
+    "code": 1,
+    "signal": null,
+    "stdout": "",
+    "stderr": "CPF2111:  La biblioteca ILEDITOR ya existe."
+}
+
+/home/EAMARCO: echo $SHELL
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "/QOpenSys/pkgs/bin/bash",
+    "stderr": ""
+}
+
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1 -c "system \"call QSYS/QZDFMDB2 PARM('-d' '-i' '-t')\""
+values current_server
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "DB2>\n  ?>\n\n00001             \n------------------\nIBMI01            \n\n  1 RECORD(S) SELECTED.",
+    "stderr": "CPFA0A9:  Objeto no encontrado.El objeto es EN_US.UTF-8."
+}
+
+
+CCSID information:
+	QCCSID: 284
+	User Job CCSID: 284
+	User Default CCSID: 284
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1 -c "system \"call QSYS/QZDFMDB2 PARM('-d' '-i' '-t')\""
+With VARIANTS ( HASH, AT, DOLLARSIGN ) as (  values ( cast( x'7B' as varchar(1) )         , cast( x'7C' as varchar(1) )         , cast( x'5B' as varchar(1) ) ))Select HASH concat AT concat DOLLARSIGN as LOCAL from VARIANTS
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "DB2>\n  ?>\n\nLOCAL \n------\nÑ@$   \n\n  1 RECORD(S) SELECTED.",
+    "stderr": "CPFA0A9:  Objeto no encontrado.El objeto es EN_US.UTF-8."
+}
+
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1 -c "system \"call QSYS/QZDFMDB2 PARM('-d' '-i' '-t')\""
+select job_name, local_port from qsys2.netstat_job_info where cast(local_port_name as VarChar(14) CCSID 37) = 'is-debug-ile' fetch first row only
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1 -c "system \"call QSYS/QZDFMDB2 PARM('-d' '-i' '-t')\""
+select job_name, local_port from qsys2.netstat_job_info j where job_name = (select job_name from qsys2.netstat_job_info j where local_port = 8005 and remote_address = '0.0.0.0' fetch first row only) and remote_address = '0.0.0.0'
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "DB2>\n  ?>\n\nJOB_NAME                     LOCAL_PORT \n---------------------------- -----------\n\n  0 RECORD(S) SELECTED.",
+    "stderr": "CPFA0A9:  Objeto no encontrado.El objeto es EN_US.UTF-8."
+}
+
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "DB2>\n  ?>\n\nJOB_NAME                     LOCAL_PORT \n---------------------------- -----------\n\n  0 RECORD(S) SELECTED.",
+    "stderr": "CPFA0A9:  Objeto no encontrado.El objeto es EN_US.UTF-8."
+}
+
+/home/EAMARCO: test -r /QIBM/ProdData/IBMiDebugService/package.json
+{
+    "code": 1,
+    "signal": null,
+    "stdout": "",
+    "stderr": ""
+}
+
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1 -c "system \"call QSYS/QZDFMDB2 PARM('-d' '-i' '-t')\""
+select job_name, local_port from qsys2.netstat_job_info where cast(local_port_name as VarChar(14) CCSID 37) = 'is-debug-ile' fetch first row only
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1 -c "system \"call QSYS/QZDFMDB2 PARM('-d' '-i' '-t')\""
+select job_name, local_port from qsys2.netstat_job_info j where job_name = (select job_name from qsys2.netstat_job_info j where local_port = 8005 and remote_address = '0.0.0.0' fetch first row only) and remote_address = '0.0.0.0'
+/home/EAMARCO: test -r /QIBM/ProdData/IBMiDebugService/package.json
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "DB2>\n  ?>\n\nJOB_NAME                     LOCAL_PORT \n---------------------------- -----------\n\n  0 RECORD(S) SELECTED.",
+    "stderr": "CPFA0A9:  Objeto no encontrado.El objeto es EN_US.UTF-8."
+}
+
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "DB2>\n  ?>\n\nJOB_NAME                     LOCAL_PORT \n---------------------------- -----------\n\n  0 RECORD(S) SELECTED.",
+    "stderr": "CPFA0A9:  Objeto no encontrado.El objeto es EN_US.UTF-8."
+}
+
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1 -c "system \"call QSYS/QZDFMDB2 PARM('-d' '-i' '-t')\""
+select OS_VERSION concat '.' concat OS_RELEASE as VERSION from sysibmadm.env_sys_info
+{
+    "code": 1,
+    "signal": null,
+    "stdout": "",
+    "stderr": ""
+}
+
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "DB2>\n  ?>\n\nVERSION                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          \n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n7.5                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              \n\n  1 RECORD(S) SELECTED.",
+    "stderr": "CPFA0A9:  Objeto no encontrado.El objeto es EN_US.UTF-8."
+}
+
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1 -c "system \"call QSYS/QZDFMDB2 PARM('-d' '-i' '-t')\""
+select max(ptf_group_level) as HIGHEST_DB2_PTF_GROUP_LEVEL from qsys2.group_ptf_info where PTF_GROUP_DESCRIPTION like 'DB2 FOR IBM I%' and ptf_group_status = 'INSTALLED'
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "DB2>\n  ?>\n\nHIGHEST_DB2_PTF_GROUP_LEVEL \n----------------------------\n\n **** CLI ERROR *****\n         SQLSTATE: 42501\nNATIVE ERROR CODE: -443\nNOT AUTHORIZED TO COMMAND WRKPTFGRP. \n\n  0 RECORD(S) SELECTED.",
+    "stderr": "CPFA0A9:  Objeto no encontrado.El objeto es EN_US.UTF-8.\nCPF503E:  Error en función definida por usuario en el miembro GROUP00001.\nCPF503E:  Error en función definida por usuario en el miembro GROUP00001.\nSQL0443:  Un programa desencadenante o una rutina externa detectó un error."
+}
+
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1 -c "system \"call QSYS/QZDFMDB2 PARM('-d' '-i' '-t')\""
+values SYSIBMADM.SELFCODES
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "DB2>\n  ?>\n\n00001                                                                                                                                                                                                                                                           \n----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n-                                                                                                                                                                                                                                                               \n\n  1 RECORD(S) SELECTED.",
+    "stderr": "CPFA0A9:  Objeto no encontrado.El objeto es EN_US.UTF-8."
+}
+
+/home/EAMARCO: ls $HOME/.vscode/mapepire-server-2.3.3.jar
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "/home/EAMARCO/.vscode/mapepire-server-2.3.3.jar",
+    "stderr": ""
+}
+
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1
+system "CHKOBJ OBJ(QSYS/EAMARCO) OBJTYPE(*LIB) AUT(*NONE)"
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "",
+    "stderr": ""
+}
+
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1 -c "system \"call QSYS/QZDFMDB2 PARM('-d' '-i' '-t')\""
+with SRCFILES as (   select      rtrim(cast(t.SYSTEM_TABLE_SCHEMA as char(10) for bit data)) as LIBRARY,     rtrim(cast(t.SYSTEM_TABLE_NAME as char(10) for bit data)) as NAME,     '*FILE'             as TYPE,     'PF'                as ATTRIBUTE,     t.TABLE_TEXT        as TEXT,     1                   as IS_SOURCE,     t.ROW_LENGTH        as SOURCE_LENGTH,     t.IASP_NUMBER       as IASP_NUMBER   from QSYS2.SYSTABLES as t   where t.FILE_TYPE = 'S' ) SELECT * FROM SRCFILES as f where f.LIBRARY = 'EAMARCO'
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "DB2>\n  ?>\n\nLIBRARY    NAME       TYPE  ATTRIBUTE  TEXT                                               IS_SOURCE   SOURCE_LENGTH  IASP_NUMBER \n---------- ---------- ----- ---------- -------------------------------------------------- ----------- -------------- ------------\nEAMARCO    HTMLSRC    *FILE PF                                                                      1            240            0\nEAMARCO    QCLSRC     *FILE PF                                                                      1            112            0\nEAMARCO    QDDSSRC    *FILE PF                                                                      1            112            0\nEAMARCO    QRPGLESRC  *FILE PF                                                                      1            112            0\nEAMARCO    QSRVSRC    *FILE PF                                                                      1             92            0\nEAMARCO    QTOOLS     *FILE PF                                                                      1             92            0\nEAMARCO    YAJL       *FILE PF                                                                      1            240            0\n\n  7 RECORD(S) SELECTED.",
+    "stderr": "CPFA0A9:  Objeto no encontrado.El objeto es EN_US.UTF-8."
+}
+
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1
+system "CHKOBJ OBJ(EAMARCO/QDDSSRC) OBJTYPE(*FILE) AUT(*UPD)"
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "",
+    "stderr": ""
+}
+
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1 -c "system \"call QSYS/QZDFMDB2 PARM('-d' '-i' '-t')\""
+with MEMBERS as (         select           rtrim(cast(a.SYSTEM_TABLE_SCHEMA as char(10) for bit data)) as LIBRARY,           b.AVGROWSIZE as RECORD_LENGTH,           a.IASP_NUMBER as ASP,           rtrim(cast(a.SYSTEM_TABLE_NAME as char(10) for bit data)) AS SOURCE_FILE,           rtrim(cast(b.SYSTEM_TABLE_MEMBER as char(10) for bit data)) as NAME,           coalesce(rtrim(cast(b.SOURCE_TYPE as varchar(10) for bit data)), '') as TYPE,           coalesce(rtrim(varchar(b.PARTITION_TEXT)), '') as TEXT,           b.NUMBER_ROWS as LINES,           extract(epoch from (b.CREATE_TIMESTAMP))*1000 as CREATED,           extract(epoch from (b.LAST_SOURCE_UPDATE_TIMESTAMP))*1000 as CHANGED         from QSYS2.SYSTABLES as a           join QSYS2.SYSPARTITIONSTAT as b             on ( b.SYSTEM_TABLE_SCHEMA, b.SYSTEM_TABLE_NAME ) = ( a.SYSTEM_TABLE_SCHEMA, a.SYSTEM_TABLE_NAME )       )       select * from MEMBERS       where LIBRARY = 'EAMARCO'         and SOURCE_FILE = 'QDDSSRC'         and NAME like '%'         and TYPE like '%'       order by NAME ASC
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "DB2>\n  ?>\n\nLIBRARY    RECORD_LENGTH        ASP    SOURCE_FILE  NAME       TYPE       TEXT                                               LINES                CREATED              CHANGED             \n---------- -------------------- ------ ------------ ---------- ---------- -------------------------------------------------- -------------------- -------------------- --------------------\nEAMARCO                     112      0 QDDSSRC      A71010FM   DSPF                                                                           147        1766044260000        1766045604000\nEAMARCO                     112      0 QDDSSRC      CLIENTES   PF                                                                              40        1765797143000        1765819729000\nEAMARCO                     112      0 QDDSSRC      CLIENTESL1 LF                                                                               9        1765797148000        1765819733000\nEAMARCO                     112      0 QDDSSRC      CLIENTESL2 LF                                                                              10        1765797151000        1765819736000\nEAMARCO                     112      0 QDDSSRC      CLIENTESL3 LF                                                                               9        1765797153000        1765819738000\nEAMARCO                     112      0 QDDSSRC      CLILOG     PF                                                                              44        1765797145000        1765819731000\nEAMARCO                     112      0 QDDSSRC      CONTASD    DSPF       Created by WrtSFL                                                   253        1590049793000        1590049794000\nEAMARCO                     112      0 QDDSSRC      EMBARCMTD  DSPF                                                                            86        1767080236000        1767099588000\nEAMARCO                     112      0 QDDSSRC      EMBARCPF   PF                                                                              63        1767017324000        1767017324000\nEAMARCO                     112      0 QDDSSRC      EXAMPRT1   PRTF       LISTA DE PRODUCTOS                                                   27        1655380637000        1655383628000\nEAMARCO                     112      0 QDDSSRC      FORECASTD  DSPF       Created by WrtSFL                                                   322        1677046661000        1677046662000\nEAMARCO                     112      0 QDDSSRC      MONITORD   DSPF       Display file para monitor                                            72        1766126302000        1766127788000\nEAMARCO                     112      0 QDDSSRC      MONSFL     DSPF       Display file con subfile                                             50        1766128130000        1766128300000\nEAMARCO                     112      0 QDDSSRC      MONSFLV2   DSPF       Display file con subfile v2                                          46        1766128652000        1766128657000\nEAMARCO                     112      0 QDDSSRC      MONSIMP    DSPF       Display file simple                                                   7        1766127845000        1766127851000\nEAMARCO                     112      0 QDDSSRC      PRIMOD     DSPF                                                                            12        1585926699000        1586164935000\nEAMARCO                     112      0 QDDSSRC      SC5115EFM  DSPF                                                                            86        1767101023000        1767101023000\nEAMARCO                     112      0 QDDSSRC      SC535T     PF                                                                              63        1767105870000        1767105871000\nEAMARCO                     112      0 QDDSSRC      SQLTBL     SQLTBL     Created by WrtSFL                                                     6        1589977549000        1589977824000\nEAMARCO                     112      0 QDDSSRC      TESTDSPF   DSPF       Created by WrtSFL                                                   228        1589976633000        1589976634000\nEAMARCO                     112      0 QDDSSRC      TESTD12    DSPF       Created by WrtSFL                                                   178        1589977754000        1589977755000\nEAMARCO                     112      0 QDDSSRC      TESTD17    DSPF       Created by WrtSFL                                                   304        1766727426000        1767017969000\nEAMARCO                     112      0 QDDSSRC      TESTD18    DSPF       Created by WrtSFL                                                   374        1767017521000        1767020415000\nEAMARCO                     112      0 QDDSSRC      TESTD19    DSPF       Created by WrtSFL                                                   374        1767017745000        1767017857000\nEAMARCO                     112      0 QDDSSRC      TESTD20    DSPF       Created by WrtSFL                                                   374        1767018476000        1767018821000\nEAMARCO                     112      0 QDDSSRC      TESTD21    DSPF       Created by WrtSFL                                                   371        1767019031000        1767019032000\nEAMARCO                     112      0 QDDSSRC      TESTD22    DSPF       Created by WrtSFL                                                   359        1767019568000        1767019569000\nEAMARCO                     112      0 QDDSSRC      TOWATSOND  DSPF                                                                            22        1586896808000        1586896808000\n\n 28 RECORD(S) SELECTED.",
+    "stderr": "CPFA0A9:  Objeto no encontrado.El objeto es EN_US.UTF-8."
+}
+
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1
+system "CHKOBJ OBJ(EAMARCO/QDDSSRC) OBJTYPE(*FILE) AUT(*UPD)"
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "",
+    "stderr": ""
+}
+
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1 -c "system \"call QSYS/QZDFMDB2 PARM('-d' '-i' '-t')\""
+SELECT IASP_NUMBER FROM TABLE(QSYS2.LIBRARY_INFO('EAMARCO', DETAILED_INFO=>'NO'))
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1 -c "system \"call QSYS/QZDFMDB2 PARM('-d' '-i' '-t')\""
+SELECT IASP_NUMBER FROM TABLE(QSYS2.LIBRARY_INFO('EAMARCO', DETAILED_INFO=>'NO'))
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "DB2>\n  ?>\n\nIASP_NUMBER \n------------\n           1\n\n  1 RECORD(S) SELECTED.",
+    "stderr": "CPFA0A9:  Objeto no encontrado.El objeto es EN_US.UTF-8."
+}
+
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1
+/usr/bin/attr -p /QSYS.LIB/EAMARCO.LIB/QDDSSRC.FILE/SC5115EFM.MBR CREATE_TIME MODIFY_TIME DATA_SIZE
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "DB2>\n  ?>\n\nIASP_NUMBER \n------------\n           1\n\n  1 RECORD(S) SELECTED.",
+    "stderr": "CPFA0A9:  Objeto no encontrado.El objeto es EN_US.UTF-8."
+}
+
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1 -c "system \"call QSYS/QZDFMDB2 PARM('-d' '-i' '-t')\""
+CREATE OR REPLACE ALIAS ILEDITOR.TEMP_65611BF28618414A82EE7B73A31DE87DB0007FEF for "EAMARCO"."QDDSSRC"("SC5115EFM")
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "DATA_SIZE=8772\nCREATE_TIME=Tue Dec 30 13:23:43 2025\nMODIFY_TIME=Tue Dec 30 13:23:43 2025",
+    "stderr": ""
+}
+
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "DB2>\n  ?>\nDB20000I  THE SQL COMMAND COMPLETED SUCCESSFULLY.",
+    "stderr": "CPFA0A9:  Objeto no encontrado.El objeto es EN_US.UTF-8."
+}
+
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1 -c "system \"call QSYS/QZDFMDB2 PARM('-d' '-i' '-t')\""
+select length(SRCDTA) as LENGTH from ILEDITOR.TEMP_65611BF28618414A82EE7B73A31DE87DB0007FEF limit 1
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "DB2>\n  ?>\n\nLENGTH     \n-----------\n        100\n\n  1 RECORD(S) SELECTED.",
+    "stderr": "CPFA0A9:  Objeto no encontrado.El objeto es EN_US.UTF-8."
+}
+
+/home/EAMARCO: LC_ALL=EN_US.UTF-8 /home/EAMARCO/.vscode/cqsh_1 -c "system \"call QSYS/QZDFMDB2 PARM('-d' '-i' '-t')\""
+CREATE TABLE QTEMP.O_UF3JK AS (select case when locate('40',hex(srcdat)) > 0 then 0 else srcdat end as srcdat, srcseq, srcdta from ILEDITOR.TEMP_65611BF28618414A82EE7B73A31DE87DB0007FEF) WITH DATA;
+Call QSYS2.QCMDEXC('CPYTOIMPF FROMFILE(QTEMP/O_UF3JK *FIRST) TOSTMF(''/tmp/vscodetemp-O_F4fuqmqL'') MBROPT(*REPLACE) STMFCCSID(1208) RCDDLM(*CRLF) DTAFMT(*DLM) RMVBLANK(*TRAILING) ADDCOLNAM(*SQL) FLDDLM('','') DECPNT(*PERIOD) STRDLM(*DBLQUOTE) STRESCCHR(*STRDLM)')
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "DB2>\nDB20000I  THE SQL COMMAND COMPLETED SUCCESSFULLY.\nDB2>\n  ?>\nDB20000I  THE SQL COMMAND COMPLETED SUCCESSFULLY.",
+    "stderr": "CPFA0A9:  Objeto no encontrado.El objeto es EN_US.UTF-8.\nCPC2958:  Todos los registros copiados del archivo O_UF3JK en QTEMP."
+}
+
+/home/EAMARCO: rm -rf "/tmp/vscodetemp-O_F4fuqmqL"
+{
+    "code": 0,
+    "signal": null,
+    "stdout": "",
+    "stderr": ""
+}
+
