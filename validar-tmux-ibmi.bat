@@ -9,8 +9,8 @@ REM ============================================
 setlocal enabledelayedexpansion
 
 REM Configuración - EDITAR ESTOS VALORES
-set IBM_HOST=your_ibmi_host
-set IBM_USER=your_username
+set IBM_HOST=192.168.50.225
+set IBM_USER=EAMARCO
 
 echo ============================================
 echo Validacion de tmux en IBM i
