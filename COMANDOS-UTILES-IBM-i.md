@@ -17,7 +17,7 @@ ls -la              # Lista detallada con archivos ocultos
 ls -lh              # Lista con tamaños legibles
 
 # Cambiar de directorio
-cd /home/EAMARCO
+cd /home/TU_USUARIO
 cd /QSYS.LIB/
 cd ..               # Directorio padre
 cd ~                # Directorio home
@@ -50,7 +50,7 @@ rm -r directorio/             # Eliminar directorio
 rm -f archivo                 # Forzar eliminación
 
 # Buscar archivos
-find /home/EAMARCO -name "*.txt"
+find /home/TU_USUARIO -name "*.txt"
 find . -type f -name "*.rpgle"
 find . -mtime -7              # Archivos modificados últimos 7 días
 
@@ -86,7 +86,7 @@ ps aux
 ps aux | grep nombre_proceso
 
 # Ver procesos de un usuario
-ps -u EAMARCO
+ps -u TU_USUARIO
 
 # Matar un proceso
 kill PID
@@ -218,7 +218,7 @@ system "CRTBNDCBL PGM(LIB/PROG) SRCFILE(LIB/QCBLLESRC)"
 system "CRTBNDCL PGM(LIB/PROG) SRCFILE(LIB/QCLSRC)"
 
 # Ver errores de compilación
-system "WRKSPLF SELECT(EAMARCO)"
+system "WRKSPLF SELECT(TU_USUARIO)"
 ```
 
 ---
@@ -236,7 +236,7 @@ netstat -an
 netstat -tulpn      # Puertos en escucha
 
 # Ping
-ping 192.168.50.225
+ping TU_IBM_i_HOST
 ping -c 4 hostname  # 4 paquetes
 
 # Ver rutas
@@ -251,11 +251,11 @@ dig hostname
 ### Transferencia de archivos
 ```bash
 # SCP (desde otra máquina)
-scp archivo.txt EAMARCO@192.168.50.225:/home/EAMARCO/
-scp EAMARCO@192.168.50.225:/home/EAMARCO/archivo.txt .
+scp archivo.txt TU_USUARIO@TU_IBM_i_HOST:/home/TU_USUARIO/
+scp TU_USUARIO@TU_IBM_i_HOST:/home/TU_USUARIO/archivo.txt .
 
 # FTP
-ftp 192.168.50.225
+ftp TU_IBM_i_HOST
 ```
 
 ---
@@ -316,11 +316,11 @@ chown -R usuario directorio/
 ```bash
 # Ver grupos del usuario
 groups
-groups EAMARCO
+groups TU_USUARIO
 
 # Ver información de usuario
 id
-id EAMARCO
+id TU_USUARIO
 ```
 
 ---
@@ -544,7 +544,7 @@ find /tmp -type f -mtime +7
 find /tmp -type f -mtime +30 -delete
 
 # Ver archivos más grandes
-du -ah /home/EAMARCO | sort -rh | head -20
+du -ah /home/TU_USUARIO | sort -rh | head -20
 ```
 
 ---

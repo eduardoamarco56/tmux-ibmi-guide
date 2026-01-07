@@ -13,7 +13,7 @@ if [ -z "$LOCALE_SET" ]; then
 fi
 
 SESSION="tn5250-ibmi"
-HOST="192.168.50.225"
+HOST="TU_IBM_i_HOST"
 
 # Verificar si la sesión ya existe
 tmux has-session -t $SESSION 2>/dev/null

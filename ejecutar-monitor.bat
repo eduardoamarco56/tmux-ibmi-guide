@@ -8,13 +8,13 @@ echo ========================================
 echo   Ejecutando Monitor IBM i
 echo ========================================
 echo.
-echo IP: 192.168.50.225
-echo Usuario: EAMARCO
+echo IP: TU_IBM_i_HOST
+echo Usuario: TU_USUARIO
 echo.
 
 REM Primero copiar el script al IBM i
 echo [1/3] Copiando script al IBM i...
-scp "%~dp0monitor-ibmi.sh" EAMARCO@192.168.50.225:/home/EAMARCO/
+scp "%~dp0monitor-ibmi.sh" TU_USUARIO@TU_IBM_i_HOST:/home/TU_USUARIO/
 
 if %ERRORLEVEL% NEQ 0 (
     echo ERROR: No se pudo copiar el script
@@ -24,7 +24,7 @@ if %ERRORLEVEL% NEQ 0 (
 
 echo.
 echo [2/3] Dando permisos de ejecucion...
-ssh EAMARCO@192.168.50.225 "chmod +x /home/EAMARCO/monitor-ibmi.sh"
+ssh TU_USUARIO@TU_IBM_i_HOST "chmod +x /home/TU_USUARIO/monitor-ibmi.sh"
 
 echo.
 echo [3/3] Ejecutando monitor...
@@ -35,7 +35,7 @@ echo.
 pause
 
 REM Conectar y ejecutar el script
-ssh -t EAMARCO@192.168.50.225 "/home/EAMARCO/monitor-ibmi.sh"
+ssh -t TU_USUARIO@TU_IBM_i_HOST "/home/TU_USUARIO/monitor-ibmi.sh"
 
 echo.
 echo Sesion finalizada.

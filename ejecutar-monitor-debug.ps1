@@ -13,7 +13,7 @@ $monitorScript = Join-Path $scriptPath "monitor-tn5250-debug.sh"
 
 # Copiar el script
 Write-Host "Copiando script de debug al IBM i..." -ForegroundColor Yellow
-scp $monitorScript EAMARCO@192.168.50.225:/home/EAMARCO/
+scp $monitorScript TU_USUARIO@TU_IBM_i_HOST:/home/TU_USUARIO/
 
 if ($LASTEXITCODE -ne 0) {
     Write-Host "ERROR: No se pudo copiar el script" -ForegroundColor Red
@@ -23,7 +23,7 @@ if ($LASTEXITCODE -ne 0) {
 
 Write-Host ""
 Write-Host "Dando permisos de ejecucion..." -ForegroundColor Yellow
-ssh EAMARCO@192.168.50.225 "chmod +x /home/EAMARCO/monitor-tn5250-debug.sh"
+ssh TU_USUARIO@TU_IBM_i_HOST "chmod +x /home/TU_USUARIO/monitor-tn5250-debug.sh"
 
 Write-Host ""
 Write-Host "Ejecutando script de debug..." -ForegroundColor Yellow
@@ -32,7 +32,7 @@ Write-Host ""
 Read-Host "Presiona Enter para continuar"
 
 # Conectar y ejecutar el script con locale configurado
-ssh -t EAMARCO@192.168.50.225 "export LANG=C; export LC_ALL=C; export LC_CTYPE=C; /home/EAMARCO/monitor-tn5250-debug.sh"
+ssh -t TU_USUARIO@TU_IBM_i_HOST "export LANG=C; export LC_ALL=C; export LC_CTYPE=C; /home/TU_USUARIO/monitor-tn5250-debug.sh"
 
 Write-Host ""
 Write-Host "Sesion finalizada." -ForegroundColor Green

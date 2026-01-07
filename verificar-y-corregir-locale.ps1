@@ -13,11 +13,11 @@ Write-Host ""
 
 # Verificar el contenido de .bash_profile
 Write-Host "1. Contenido de ~/.bash_profile:" -ForegroundColor Cyan
-ssh EAMARCO@192.168.50.225 "cat ~/.bash_profile 2>/dev/null || echo 'Archivo no existe'"
+ssh TU_USUARIO@TU_IBM_i_HOST "cat ~/.bash_profile 2>/dev/null || echo 'Archivo no existe'"
 
 Write-Host ""
 Write-Host "2. Locale actual en nueva sesion:" -ForegroundColor Cyan
-ssh EAMARCO@192.168.50.225 "bash -l -c 'echo LANG=\$LANG; echo LC_ALL=\$LC_ALL; echo LC_CTYPE=\$LC_CTYPE'"
+ssh TU_USUARIO@TU_IBM_i_HOST "bash -l -c 'echo LANG=\$LANG; echo LC_ALL=\$LC_ALL; echo LC_CTYPE=\$LC_CTYPE'"
 
 Write-Host ""
 Write-Host "========================================"
@@ -57,7 +57,7 @@ echo 'Configuracion actualizada'
 cat ~/.bash_profile
 "@
 
-    ssh EAMARCO@192.168.50.225 $command
+    ssh TU_USUARIO@TU_IBM_i_HOST $command
     
     Write-Host ""
     Write-Host "========================================"
@@ -67,7 +67,7 @@ cat ~/.bash_profile
     Write-Host "Probando con nueva sesion..." -ForegroundColor Yellow
     Write-Host ""
     
-    ssh EAMARCO@192.168.50.225 "bash -l -c 'echo LANG=\$LANG; echo LC_ALL=\$LC_ALL; echo LC_CTYPE=\$LC_CTYPE'"
+    ssh TU_USUARIO@TU_IBM_i_HOST "bash -l -c 'echo LANG=\$LANG; echo LC_ALL=\$LC_ALL; echo LC_CTYPE=\$LC_CTYPE'"
 }
 
 Write-Host ""

@@ -7,8 +7,8 @@ Write-Host "========================================"
 Write-Host "   Ejecutando 4 Ventanas TN5250"
 Write-Host "========================================"
 Write-Host ""
-Write-Host "IP: 192.168.50.225"
-Write-Host "Usuario: EAMARCO"
+Write-Host "IP: TU_IBM_i_HOST"
+Write-Host "Usuario: TU_USUARIO"
 Write-Host ""
 
 # Obtener la ruta del script
@@ -24,7 +24,7 @@ if (-not (Test-Path $monitorScript)) {
 
 # Copiar el script al IBM i
 Write-Host "[1/3] Copiando script al IBM i..." -ForegroundColor Yellow
-scp $monitorScript EAMARCO@192.168.50.225:/home/EAMARCO/
+scp $monitorScript TU_USUARIO@TU_IBM_i_HOST:/home/TU_USUARIO/
 
 if ($LASTEXITCODE -ne 0) {
     Write-Host "ERROR: No se pudo copiar el script" -ForegroundColor Red
@@ -34,7 +34,7 @@ if ($LASTEXITCODE -ne 0) {
 
 Write-Host ""
 Write-Host "[2/3] Dando permisos de ejecucion..." -ForegroundColor Yellow
-ssh EAMARCO@192.168.50.225 "chmod +x /home/EAMARCO/monitor-tn5250.sh"
+ssh TU_USUARIO@TU_IBM_i_HOST "chmod +x /home/TU_USUARIO/monitor-tn5250.sh"
 
 Write-Host ""
 Write-Host "[3/3] Ejecutando 4 ventanas TN5250..." -ForegroundColor Yellow
@@ -48,7 +48,7 @@ Write-Host ""
 Read-Host "Presiona Enter para continuar"
 
 # Conectar y ejecutar el script con locale configurado
-ssh -t EAMARCO@192.168.50.225 "export LANG=C; export LC_ALL=C; export LC_CTYPE=C; /home/EAMARCO/monitor-tn5250.sh"
+ssh -t TU_USUARIO@TU_IBM_i_HOST "export LANG=C; export LC_ALL=C; export LC_CTYPE=C; /home/TU_USUARIO/monitor-tn5250.sh"
 
 Write-Host ""
 Write-Host "Sesion finalizada." -ForegroundColor Green

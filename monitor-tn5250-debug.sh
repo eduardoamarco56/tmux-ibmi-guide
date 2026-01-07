@@ -26,7 +26,7 @@ tmux -V
 echo ""
 
 SESSION="tn5250-ibmi"
-HOST="192.168.50.225"
+HOST="TU_IBM_i_HOST"
 
 echo "=== DEBUG: Verificando si la sesión existe ==="
 tmux has-session -t $SESSION 2>/dev/null

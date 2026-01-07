@@ -8,8 +8,8 @@ Write-Host "========================================"
 Write-Host "   Abriendo 4 Ventanas SSH"
 Write-Host "========================================"
 Write-Host ""
-Write-Host "IP: 192.168.50.225"
-Write-Host "Usuario: EAMARCO"
+Write-Host "IP: TU_IBM_i_HOST"
+Write-Host "Usuario: TU_USUARIO"
 Write-Host ""
 Write-Host "Se abriran 4 ventanas de PowerShell" -ForegroundColor Cyan
 Write-Host "Cada una con una sesion SSH al IBM i" -ForegroundColor Cyan
@@ -26,22 +26,22 @@ Write-Host ""
 Write-Host "Abriendo ventanas..." -ForegroundColor Yellow
 
 # Ventana 1
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "Write-Host '=== SSH Sesion 1 ===' -ForegroundColor Green; ssh EAMARCO@192.168.50.225"
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "Write-Host '=== SSH Sesion 1 ===' -ForegroundColor Green; ssh TU_USUARIO@TU_IBM_i_HOST"
 
 Start-Sleep -Seconds 1
 
 # Ventana 2
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "Write-Host '=== SSH Sesion 2 ===' -ForegroundColor Green; ssh EAMARCO@192.168.50.225"
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "Write-Host '=== SSH Sesion 2 ===' -ForegroundColor Green; ssh TU_USUARIO@TU_IBM_i_HOST"
 
 Start-Sleep -Seconds 1
 
 # Ventana 3
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "Write-Host '=== SSH Sesion 3 ===' -ForegroundColor Green; ssh EAMARCO@192.168.50.225"
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "Write-Host '=== SSH Sesion 3 ===' -ForegroundColor Green; ssh TU_USUARIO@TU_IBM_i_HOST"
 
 Start-Sleep -Seconds 1
 
 # Ventana 4
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "Write-Host '=== SSH Sesion 4 ===' -ForegroundColor Green; ssh EAMARCO@192.168.50.225"
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "Write-Host '=== SSH Sesion 4 ===' -ForegroundColor Green; ssh TU_USUARIO@TU_IBM_i_HOST"
 
 Write-Host ""
 Write-Host "========================================"
@@ -49,7 +49,7 @@ Write-Host "  4 ventanas SSH abiertas"
 Write-Host "========================================"
 Write-Host ""
 Write-Host "Cada ventana es una sesion SSH al IBM i" -ForegroundColor Cyan
-Write-Host "Tendras acceso al shell bash (eamarco@IBMI01...)" -ForegroundColor Cyan
+Write-Host "Tendras acceso al shell bash (TU_USUARIO@IBMI01...)" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "Para cerrar: escribe 'exit' en cada ventana" -ForegroundColor Yellow
 Write-Host ""

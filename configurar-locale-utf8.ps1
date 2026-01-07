@@ -8,10 +8,10 @@ Write-Host "   Configurar Locale UTF-8 en IBM i"
 Write-Host "========================================"
 Write-Host ""
 Write-Host "Este script configurara el locale UTF-8 permanentemente"
-Write-Host "en el perfil de usuario EAMARCO"
+Write-Host "en el perfil de usuario TU_USUARIO"
 Write-Host ""
-Write-Host "IP: 192.168.50.225"
-Write-Host "Usuario: EAMARCO"
+Write-Host "IP: TU_IBM_i_HOST"
+Write-Host "Usuario: TU_USUARIO"
 Write-Host ""
 
 $confirm = Read-Host "Deseas continuar? (S/N)"
@@ -37,7 +37,7 @@ echo 'Locale UTF-8 configurado en ~/.bash_profile'
 echo 'Cierra la sesion y vuelve a conectar para que tome efecto'
 "@
 
-ssh EAMARCO@192.168.50.225 $command
+ssh TU_USUARIO@TU_IBM_i_HOST $command
 
 if ($LASTEXITCODE -eq 0) {
     Write-Host ""

@@ -8,8 +8,8 @@ Write-Host "========================================"
 Write-Host "   Abriendo 4 Ventanas TN5250"
 Write-Host "========================================"
 Write-Host ""
-Write-Host "IP: 192.168.50.225"
-Write-Host "Usuario: EAMARCO"
+Write-Host "IP: TU_IBM_i_HOST"
+Write-Host "Usuario: TU_USUARIO"
 Write-Host ""
 Write-Host "Se abriran 4 ventanas de PowerShell" -ForegroundColor Cyan
 Write-Host "Cada una con una sesion TN5250" -ForegroundColor Cyan
@@ -26,22 +26,22 @@ Write-Host ""
 Write-Host "Abriendo ventanas..." -ForegroundColor Yellow
 
 # Ventana 1
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "Write-Host 'TN5250 Ventana 1' -ForegroundColor Green; ssh -t EAMARCO@192.168.50.225 'tn5250 192.168.50.225'"
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "Write-Host 'TN5250 Ventana 1' -ForegroundColor Green; ssh -t TU_USUARIO@TU_IBM_i_HOST 'tn5250 TU_IBM_i_HOST'"
 
 Start-Sleep -Seconds 1
 
 # Ventana 2
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "Write-Host 'TN5250 Ventana 2' -ForegroundColor Green; ssh -t EAMARCO@192.168.50.225 'tn5250 192.168.50.225'"
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "Write-Host 'TN5250 Ventana 2' -ForegroundColor Green; ssh -t TU_USUARIO@TU_IBM_i_HOST 'tn5250 TU_IBM_i_HOST'"
 
 Start-Sleep -Seconds 1
 
 # Ventana 3
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "Write-Host 'TN5250 Ventana 3' -ForegroundColor Green; ssh -t EAMARCO@192.168.50.225 'tn5250 192.168.50.225'"
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "Write-Host 'TN5250 Ventana 3' -ForegroundColor Green; ssh -t TU_USUARIO@TU_IBM_i_HOST 'tn5250 TU_IBM_i_HOST'"
 
 Start-Sleep -Seconds 1
 
 # Ventana 4
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "Write-Host 'TN5250 Ventana 4' -ForegroundColor Green; ssh -t EAMARCO@192.168.50.225 'tn5250 192.168.50.225'"
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "Write-Host 'TN5250 Ventana 4' -ForegroundColor Green; ssh -t TU_USUARIO@TU_IBM_i_HOST 'tn5250 TU_IBM_i_HOST'"
 
 Write-Host ""
 Write-Host "========================================"

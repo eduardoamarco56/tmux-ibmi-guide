@@ -13,13 +13,13 @@ $verifyScript = Join-Path $scriptPath "verificar-locale.sh"
 
 # Copiar el script
 Write-Host "Copiando script de verificacion..." -ForegroundColor Yellow
-scp $verifyScript EAMARCO@192.168.50.225:/home/EAMARCO/
+scp $verifyScript TU_USUARIO@TU_IBM_i_HOST:/home/TU_USUARIO/
 
 # Dar permisos y ejecutar
 Write-Host "Ejecutando verificacion..." -ForegroundColor Yellow
 Write-Host ""
 
-ssh EAMARCO@192.168.50.225 "chmod +x /home/EAMARCO/verificar-locale.sh && /home/EAMARCO/verificar-locale.sh"
+ssh TU_USUARIO@TU_IBM_i_HOST "chmod +x /home/TU_USUARIO/verificar-locale.sh && /home/TU_USUARIO/verificar-locale.sh"
 
 Write-Host ""
 Write-Host "========================================"
